@@ -1,0 +1,22 @@
+{% extends 'shablon.html' %}
+{% block main %}
+{% include 'error.html' %}
+<section class="add_post">
+  <form method="POST" enctype="multipart/form-data">
+    <div class="mb-3">
+      <label for="exampleFormControlInput1" class="form-label">Ім'я посту</label>
+      <input type="text" name = "post_name" value = "{{post['post_name']}}" class="form-control" id="exampleFormControlInput1">
+    </div>
+    <div class="mb-3">
+      <label for="exampleFormControlTextarea1" class="form-label">Текст посту</label>
+      <textarea class="form-control" name = "text" id="exampleFormControlTextarea1" rows="3">{{post['text']}}</textarea>
+    </div>
+    <div class="mb-3">
+      <label for="formFile" class="form-label">Виберіть зображення</label>
+      <input type="hidden" name="old_image" value = "{{post['image']}}">
+      <input class="form-control" name = "image" type="file" id="formFile" lang="ukr">
+    </div>
+    <button type="submit" class="btn btn-primary btn-sm">Зберігти зміни</button>
+  </form>
+</section>
+{% endblock %}

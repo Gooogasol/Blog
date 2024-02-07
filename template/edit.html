@@ -1,0 +1,24 @@
+{% extends "shablon.html" %}
+{% block header %}
+{% include 'menu.html' %}
+{% endblock %}
+{% block main %}
+<section class="add_post">
+  <form method="POST" enctype="multipart/form-data">
+    <div class="mb-3">
+      <label for="exampleFormControlInput1" class="form-label">Ім'я посту</label>
+      <input type="text" name = "post_name" class="form-control" id="exampleFormControlInput1" value="{{post['post_name']}}">
+    </div>
+    <div class="mb-3">
+      <label for="exampleFormControlTextarea1" class="form-label">Текст посту</label>
+      <textarea class="form-control" name = "text" id="exampleFormControlTextarea1" rows="3">{{post['text ']}}</textarea>
+    </div>
+    <div class="mb-3">
+      <label for="formFile" class="form-label">Виберіть зображення</label>
+      <input class="form-control" name = "image" type="file" id="formFile" lang="ukr">
+      <input type="hidden" name="old_image" value="{{post['image']}}">
+    </div>
+    <button type="submit" class="btn btn-primary btn-sm">Підтвердити зміни</button>
+  </form>
+</section>
+{% endblock %}

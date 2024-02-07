@@ -1,0 +1,10 @@
+{% extends "shablon.html" %}
+{% block header %}
+{% include 'baner.html' %}
+{% include 'menu.html' %}
+{% endblock %}
+{% block main %}
+    <h1>Це мій блог</h1>
+    <img src="/static/{{user['avatar']}}">
+    <p>{{user['about_me_short']}}</p>
+{% endblock %}
